@@ -1,8 +1,7 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
-
-abstract contract PaperWings {
+abstract contract Creature {
 
   mapping(address => bytes32[]) collection;
   mapping(bytes32 => uint256) creatures;
@@ -23,9 +22,6 @@ abstract contract PaperWings {
     string name;
     string faction;
   }
-
-  function setCreatureStats(bytes32 _id, )
-
 
   function storeCreature(bytes32 _id, address owner, uint256 birthDate, uint256 hp, uint256 power, uint256 defense, uint256 energy, uint256 proximity, bytes4 _stance, string memory _name, string memory _faction)
       internal
@@ -71,7 +67,11 @@ abstract contract PaperWings {
   }
 
   function checkAge (bytes32 _id) public returns (uint ageInDays);
+
   function createNewCreature(string memory _name) public virtual;
+
   function viewCreature(bytes32 id) public virtual view returns(Creature memory);
+
+  
 
 }
