@@ -1,10 +1,9 @@
 pragma solidity ^0.7.0;
 
-abstract contract Battlefield {
+contract Battlefield {
 
-  uint xMax = 6;
-  uint yMax = 6;
-
+  uint xMax;
+  uint yMax;
 
   struct Terrain {
     string name;
@@ -12,10 +11,17 @@ abstract contract Battlefield {
     uint y;
     bytes4 difficulty;
   }
-  // x y
-  mapping (uint => mapping (uint => Terrain) terrainMap;
 
-  function createNewTerrain (string name, uint x, uint y, bytes4 difficulty) public returns (bool);
+  mapping (uint => mapping (uint => Terrain)) terrainMap;
+  mapping (uint => mapping (uint => bytes32)) creatureMap;
+
+  function loadCreatures() public returns (bytes32, bytes32, bytes32, bytes32, bytes32, bytes32) {
+    Creatures memory _creatures =
+  }
+
+  function createNewTerrain (string name, uint x, uint y, bytes4 difficulty) public;
+
+  function
 
 
 
