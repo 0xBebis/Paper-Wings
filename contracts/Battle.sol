@@ -17,20 +17,17 @@ contract Battle is Battlefield {
     uint ogIndex;
   }
 
-  struct Creatures {
-    //player 1
-    bytes32 cid1;
-    bytes32 cid2;
-    bytes32 cid3;
-    // player 2
-    bytes32 cid4;
-    bytes32 cid5;
-    bytes32 cid6;
+  struct CreatureState {
+    uint[2] xy;
   }
+
+  bytes32[3] player1Creatures;
+  bytes32[3] player2Creatures;
 
   bytes32[] openGames;
 
   mapping (bytes32 => Game) games;
+  //creature
   mapping (bytes32 => Creatures) creaturesInGame;
 
   // NOTE: make sure this isn't dumbassed
