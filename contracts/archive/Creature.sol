@@ -66,12 +66,14 @@ abstract contract Creature {
     return (collection[msg.sender][index]);
   }
 
-  function checkAge (bytes32 _id) public returns (uint ageInDays);
+  function checkAge (bytes32 _id) public returns (uint ageInDays) {
+    return (block.timestamp.sub())
+  }
 
   function createNewCreature(string memory _name) public virtual;
 
   function viewCreature(bytes32 id) public virtual view returns(Creature memory);
 
-  
+
 
 }

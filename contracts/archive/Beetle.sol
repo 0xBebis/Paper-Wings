@@ -8,6 +8,4 @@ contract Beetle is Creature {
     collection[msg.sender].push(_id);
     storeCreature(_id, msg.sender, block.timestamp, 150, 2, 4, 2, 0, 0x35895a57, name, "Beetle");
   }
-
-  function 
 }
